@@ -2,7 +2,7 @@ from .Font import FONT  # import the 7-segment Font
 from .TM1638s import TM1638s
 
 
-class TMBoards:
+class TMBoards(TM1638s):
 	"""
 	Consider all the chained TM1638 boards (8 leds, 8 7-segment displays and 8 switchs) in one object
 	
