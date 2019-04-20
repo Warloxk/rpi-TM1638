@@ -2,7 +2,7 @@ from .Font import FONT  # import the 7-segment Font
 from .TM1638s import TM1638s
 
 
-class TMBoards(TM1638s):
+class TMBoards:
 	"""
 	Consider all the chained TM1638 boards (8 leds, 8 7-segment displays and 8 switchs) in one object
 	
@@ -11,9 +11,9 @@ class TMBoards(TM1638s):
 	(in the TM, you read the state of the switches all together, so once you read the value for the i-th switch, you have the value for all the other switches) 
 	"""
 
-	def __init__( self, dio, clk, stb, brightness=1 ):
+	def __init__(self, dio, clk, stb, brightness=1 ):
 		# initialize chainedTM
-		super(TMBoards, self).__init__(dio, clk, stb, brightness)
+		super().__init__(dio, clk, stb, brightness)
 
 		# nb of boards
 		self._nbBoards = len(stb)
@@ -50,7 +50,7 @@ class TMBoards(TM1638s):
 
 
 
-class Leds(object):
+class Leds:
 	"""Class to manipulate the leds mounted on the chained TM Boards"""
 
 	def __init__(self, TM):
@@ -70,7 +70,7 @@ class Leds(object):
 
 
 
-class Segments(object):
+class Segments:
 	"""Class to manipulate the 7-segment displays on the chained TM Boards"""
 
 	def __init__(self, TM):

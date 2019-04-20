@@ -15,7 +15,7 @@ FIXED_ADDR = 0x04
 # TODO: allow multiple DIO, so that we can receive data from the TMs (the switches) in parallel
 
 
-class TM1638s(object):
+class TM1638s:
 	"""TM1638s class"""
 
 	def __init__(self, dio, clk, stb, brightness=1):
